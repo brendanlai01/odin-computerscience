@@ -17,15 +17,13 @@ function fibs(num){
 
 function fibsRec(n){
     console.log("This was printed recursively");
-    let array = [];
-    if(n === 0){ 
-        array[n] = n;
-        return console.log(array);
-    }else if(n < 2){
-        array[n] = n;
-        return fibsRec(array[n] - 1);
+    if (n < 2) {
+        return [1];   
     }
-    else{
-        return (fibsRec(n-1) + fibsRec(n-2));
+    if (n < 3) {
+        return [1, 1];
     }
+    let arr = fibsRec(n - 1);
+    arr.push(arr[n - 2] + arr[n - 3]);
+    return arr;
 }
