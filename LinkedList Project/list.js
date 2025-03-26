@@ -23,7 +23,13 @@ export class linkedList {
     }
 
     size(){
-
+        let current = this.head;
+        let count = 0;
+        while(current){
+            current = current.nextNode;
+            count++;
+        }
+        return count;
     }
 
     head(){
