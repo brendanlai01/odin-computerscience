@@ -66,7 +66,22 @@ export class linkedList {
     }
 
     find(value){
-
+        let current = this.head;
+        let count = 0;
+        if(current.value === value){
+            return count;
+        }
+        current = current.nextNode;
+        while(current){
+            count++;
+            if(current.value === value){
+                return count;
+            }else if(current.value !== value){
+               current = current.nextNode;
+               continue;
+            }
+        }
+        return null;
     }
 
     toString(){ /** The format should be: ( value ) -> ( value ) -> ( value ) -> null */
