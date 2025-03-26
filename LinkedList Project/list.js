@@ -57,7 +57,16 @@ export class linkedList {
     }
 
     at(index){
-
+        let current = this.head;
+        let count = 0;
+        while(current){
+            if(count === index){
+                return current.value;
+            }
+            current = current.nextNode;
+            count++;
+        }
+        return "Does not exist";
     }
 
     pop(){
