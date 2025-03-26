@@ -41,11 +41,19 @@ export class linkedList {
     }
 
     head(){
-
+        return this.head;
     }
 
     tail(){
-
+        let current = this.head;
+        while(current){
+            if(current.nextNode === null){
+                return current;
+            }
+            current = current.nextNode;
+            continue;
+        }
+        return;
     }
 
     at(index){
