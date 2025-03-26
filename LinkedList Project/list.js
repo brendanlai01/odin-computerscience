@@ -119,7 +119,17 @@ export class linkedList {
     }
 
     toString(){ /** The format should be: ( value ) -> ( value ) -> ( value ) -> null */
-
+        let current = this.head;
+        let string = '';
+        while(current){
+            if(current.nextNode === null){
+                string += `( ${current.value} ) -> null`;
+                return string;
+            }
+            string += `( ${current.value} ) -> `;
+            current = current.nextNode;
+        }
+        return string;
     }
 
 }
