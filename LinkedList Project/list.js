@@ -1,3 +1,4 @@
+import { Node } from "./node";
 
 export class linkedList {
     constructor(head = null){
@@ -5,7 +6,16 @@ export class linkedList {
     }
 
     append(value){
-
+        let newnode=new Node(value);
+        if(this.head === null){
+            this.head = newnode;
+            return;
+        }
+        let current = this.head;
+        while(current.nextNode){
+            current = current.nextNode;
+        }
+        current.nextNode = newnode;   
     }
 
     prepend(value){
