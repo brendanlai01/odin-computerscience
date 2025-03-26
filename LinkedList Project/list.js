@@ -70,7 +70,16 @@ export class linkedList {
     }
 
     pop(){
-
+        let current = this.head;
+        while(current){
+            if(!current.nextNode.nextNode){
+                current.nextNode = null;
+                return this.toString();
+            }
+            current = current.nextNode;
+            continue;
+        }
+        return;
     }
 
     contains(value){
