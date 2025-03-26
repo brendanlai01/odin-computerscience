@@ -49,7 +49,20 @@ export class linkedList {
     }
 
     contains(value){
-
+        let current = this.head;
+        if(current.value === value){
+            return true;
+        }
+        current = current.nextNode;
+        while(current){
+            if(current.value === value){
+                return true;
+            }else if(current.value !== value){
+               current = current.nextNode;
+               continue;
+            }
+        }
+        return false;
     }
 
     find(value){
