@@ -9,6 +9,17 @@ export class Hash{
         this.#buckets = new Array(capacity);
         this.size = 0;
     }
+
+    #checkBounds(index){
+        if (index < 0 || index >= buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+          }
+    }
+
+    #checkBalance(){
+        if (this.size >= this.#buckets * this.#loadFactor) {
+            this.#buckets[this.#capacity * 2] = null;
+        }
     }
 
     hash(key){
