@@ -1,8 +1,14 @@
 export class Hash{
+    #buckets;
+    #capacity;
+    #loadFactor;
     
-    constructor(capacity, loadFactor){
-        this.capacity = capacity;
-        this.loadFactor = loadFactor;
+    constructor(capacity = 16, loadFactor = 0.75){
+        this.#capacity = capacity;
+        this.#loadFactor = loadFactor;
+        this.#buckets = new Array(capacity);
+        this.size = 0;
+    }
     }
 
     hash(key){
