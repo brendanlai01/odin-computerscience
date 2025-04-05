@@ -30,7 +30,7 @@ export class Hash{
           hashCode = primeNumber * hashCode + key.charCodeAt(i);
         }
      
-        return hashCode % this.capacity;
+        return hashCode;
     }
 
     set(key, value){
