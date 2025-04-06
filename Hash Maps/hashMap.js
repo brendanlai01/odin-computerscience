@@ -35,7 +35,28 @@ export class Hash{
     }
 
     set(key, value){
+        let h = this.hash(key);
+        let index = h % this.#buckets.length;
+        let node = this.#buckets[index];
 
+        if(node === undefined){
+            this.#checkBalance();
+            this.#checkBounds(index);
+            this.#buckets[index] = new linkedList();
+            this.#buckets[index].append(key, value);
+            this.size++;
+            return this.#buckets;
+        }
+        else if(this.#buckets[index].contains(key)){
+            let linkIndex = this.#buckets[index].find(key);
+            let linkedNode = node.at(linkIndex);
+            return linkedNode.value = value;
+        }
+        else{
+            this.#checkBalance();
+            this.#buckets[index].append(key, value);
+            this.size++;
+        }
     }
 
     get(key){
