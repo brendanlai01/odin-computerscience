@@ -11,14 +11,15 @@ export class Hash{
     }
 
     #checkBounds(index){
-        if (index < 0 || index >= buckets.length) {
+        if (index < 0 || index >= this.#buckets.length) {
             throw new Error("Trying to access index out of bounds");
-          }
+        }
     }
 
     #checkBalance(){
-        if (this.size >= this.#buckets * this.#loadFactor) {
-            this.#buckets[this.#capacity * 2] = null;
+        if (this.size >= this.#buckets.length * this.#loadFactor) {
+            this.#buckets[this.#capacity * 2] = undefined;
+            this.#capacity *= 2;
         }
     }
 
