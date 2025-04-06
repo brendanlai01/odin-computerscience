@@ -89,11 +89,12 @@ export class Hash{
     }
 
     length(){
-
+        return `buckets length is: ${this.size} and capacity is ${this.#capacity}`;
     }
 
     clear(){
-
+        this.#buckets.length = 0;
+        return this.#buckets = new Array(this.#capacity);
     }
 
     keys(){
