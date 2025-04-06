@@ -60,7 +60,11 @@ export class Hash{
     }
 
     get(key){
-
+        let h = this.hash(key);
+        let node = this.#buckets[h % this.#buckets.length];
+        
+        if(node !== undefined) return node.value;
+        else return null;
     }
 
     has(key){
