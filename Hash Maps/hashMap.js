@@ -68,7 +68,13 @@ export class Hash{
     }
 
     has(key){
-
+        let arr = this.#buckets;
+        for(let item of arr){
+            if(item !== undefined && item.key === key){
+                return true;
+            }
+        }
+        return false;
     }
 
     remove(key){
