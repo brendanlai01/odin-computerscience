@@ -78,7 +78,14 @@ export class Hash{
     }
 
     remove(key){
-
+        let hashCode = hash(key);
+        let removeKey = this.#buckets[hashCode].key;
+        
+        if(!removeKey){
+            this.#buckets[hashCode] = null;
+            return true;
+        }
+        else return false;
     }
 
     length(){
