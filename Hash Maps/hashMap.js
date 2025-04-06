@@ -98,14 +98,35 @@ export class Hash{
     }
 
     keys(){
+        let keys = [];
 
+        this.#buckets.forEach((item) =>{
+            if(!item){
+                keys.push(item.key);
+            }
+        })
+        return keys;
     }
 
     values(){
+        let values = [];
         
+        this.#buckets.forEach((item) =>{
+            if(!item){
+                values.push(item.value);
+            }
+        })
+        return values;
     }
 
     entries(){ /** returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]] */
-
+        let entries = [];
+        
+        this.#buckets.forEach((item) =>{
+            if(item){
+                entries.push(item);
+            }
+        })
+        return entries;
     }
 }
