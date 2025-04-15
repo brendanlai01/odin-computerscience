@@ -1,3 +1,5 @@
+import { linkedList } from "./linkedList.js";
+
 export class Hash{
     #buckets;
     #capacity;
