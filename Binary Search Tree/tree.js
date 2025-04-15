@@ -1,7 +1,7 @@
 export class Tree{
 
     constructor(root){
-        this.root = root;
+        this.root = this.buildTree([...new Set(array)].sort((a,b) => a - b));
     }
 
 
@@ -9,13 +9,7 @@ export class Tree{
 }
 
 
-function removeDupes(array){
-    return array.filter((value, index) => array.indexOf(value) === index);
-}
 
-function sortAsc(array){
-    return array.sort(function(a, b){return a-b});
-}
 
 function prettyPrint(node){
     const prettyPrint = (node, prefix = "", isLeft = true) => {
